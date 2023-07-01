@@ -8,16 +8,14 @@ class Counter extends React.Component {
       super(props)
       this.state = {
           count: 0,
-          incrementAmount:1,
-          incrementInverval:1000
       }
       setInterval(() => {
           this.setState((state) => {
               return {
-                  count: this.state.count + this.state.incrementAmount,
+                  count: state.count + 1,
               }
           })
-      }, this.state.incrementInverval)
+      }, 1000)
   }
   render() {
       return (
@@ -25,6 +23,11 @@ class Counter extends React.Component {
               <h1>Counter: {this.state.count}</h1>
           </div>
       )
+
+  }
+}
+
+export default Counter
 
   }
 }
