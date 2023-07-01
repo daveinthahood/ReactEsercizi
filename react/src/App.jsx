@@ -7,20 +7,22 @@ class Counter extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
-          count: 0
+          count: 0,
+          incrementAmount:1,
+          incrementInverval:1000
       }
       setInterval(() => {
           this.setState((state) => {
               return {
-                  count: state.count + 1,
+                  count: this.state.count + this.state.incrementAmount,
               }
           })
-      }, 1000)
+      }, this.state.incrementInverval)
   }
   render() {
       return (
           <div>
-              <h1>Count: {this.state.count}</h1>
+              <h1>Counter: {this.state.count}</h1>
           </div>
       )
 
