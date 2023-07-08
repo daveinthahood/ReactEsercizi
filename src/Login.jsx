@@ -1,5 +1,4 @@
-const { useState } = require("react")
-const { Form } = require("react-router-dom")
+import React, { useState } from "react";
 
 
 
@@ -19,7 +18,10 @@ const Login = () => {
             }
         })
     }
-}
+
+    const handleReset = (event) => {
+        setLogin({username:"", password:""})
+    }
 
 return (
     <>
@@ -29,8 +31,11 @@ return (
         </Form>
         {login.name === "" || login.password === "" ? (<button disabled={true}> Submit</button>)
         : (<button> Login</button>)        
-    
-    }
-        
+    }    
+        <button onClick={handleReset}> Reset </button>
     </>
 )
+}
+
+
+export default Login;
