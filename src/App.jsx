@@ -10,7 +10,7 @@ const App =()=> {
     <>
       <h1> Welcome Davide your age is {this.props.age}</h1>
       {
-        this.props.age && <p> your age is {this.props.age} </p>
+        this.props.age > 18 &&  this.props.age < 65 && <p> your age is {this.props.age} </p> 
       }
     </>
   )
