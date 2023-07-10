@@ -10,7 +10,10 @@ const App =()=> {
     <>
       <h1> Welcome Davide </h1>
       {
-        this.props.age > 18 && this.props.age < 65 && name ==="John" && <p> your age is {this.props.age} </p> 
+         { this.props.age > 18 ? ( <p  your age={this.props.age} />
+        ) : (
+          "You are very young!"
+        )}
       }
     </>
   )
