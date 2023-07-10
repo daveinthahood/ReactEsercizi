@@ -8,9 +8,9 @@ const App =()=> {
   
   return (
     <>
-      <h1> Welcome Davide your age is {this.props.age}</h1>
+      <h1> Welcome Davide </h1>
       {
-        this.props.age > 18 &&  this.props.age < 65 && <p> your age is {this.props.age} </p> 
+        this.props.age > 18 && this.props.age < 65 && name ==="John" && <p> your age is {this.props.age} </p> 
       }
     </>
   )
