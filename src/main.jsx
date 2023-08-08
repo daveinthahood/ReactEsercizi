@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { GitHubUsers } from './GitHubUsers'
+import { ClickTracker } from './ClickTracker'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <GitHubUsers />
+  <ClickTracker />
 )
