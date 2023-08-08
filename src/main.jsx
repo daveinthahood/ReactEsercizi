@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {  Login } from './Login'
+import { ClickCounter } from './ClickCounter'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Login />
+  <ClickCounter />
 )
