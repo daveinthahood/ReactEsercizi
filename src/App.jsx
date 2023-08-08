@@ -1,36 +1,36 @@
+import React from "react";
+import { Component } from "react";
 
-class ClickTracker extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state  ={
-      press:null
+export class ClickTracker extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            lastClicked : ""
+        }
     }
-  }
 
 
-  handleClick = (event) => {
-    const press = event.target;
-    this.setState({press})
-  }
+    handleClick = (event) => {
+        const { target } = event;
+        const { name } = target
 
-  render () {
-    const {press} = this.state;
-    return (
-      <div>
-        <button onClick={this.handleClick}>
-          Ciao 
-        </button>
+        this.setState({
+            lastClicked: name
+        })
+    }
 
-        <button onClick={this.handleClick}>
-          Sono
-        </button>
+    render() {
+        const {lastClicked} = this.state;
 
-        <button onClick={this.handleClick}>
-          Davide
-        </button>
+        return (
+            <>
 
-        <h1> {press} </h1>
-      </div>
-    )
-  }
+               <p> Last Click : {lastClicked} </p>
+
+                <button name="first-button" onClick={this.handleClick}> Button </button>
+                <button name="second-button" onClick={this.handleClick}> Button  </button>
+                <button name="third-button" onClick={this.handleClick}> Button </button>
+            </>
+        )
+    }
 }
