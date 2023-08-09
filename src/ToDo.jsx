@@ -50,7 +50,7 @@ export class TodoList extends React.Component {
                 <h1> To Do</h1>
 
                 <div>
-                    {render(items, this.handleDelete)}
+                    {render(items)}
 
                     <input type="text" 
                            value={newValue}
