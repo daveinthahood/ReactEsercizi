@@ -33,6 +33,13 @@ export class TodoList extends React.Component {
         this.setState({items: []})
     }
 
+    handleDelete = (i) => {
+        this.setState((state) => {
+            const newItems = state.items.filter((i) => i != items)
+            return {items:newItems}
+        })
+    }
+
 
     render () {
         const {items, newValue} = this.state
@@ -55,6 +62,7 @@ export class TodoList extends React.Component {
 
                     <button onClick={this.handleItems}> Add </button>
                     <button onClick={this.handleReset}> Reset </button>
+                    <button onClick={this.handleDelete}> Delete </button>
                 </div>
 
 
