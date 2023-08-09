@@ -20,11 +20,18 @@ export class TodoList extends React.Component {
     handleItems = () => {
         const {items, newValue}= this.state;
         if(newValue != ""){
-            const newTodo = [...items, newValue];
-            this.setState({items:newTodo, newValue:""})
+            const newTodo = [
+                ...items, 
+                newValue
+            ];
+            this.setState({
+                items:newTodo, 
+                newValue:""})
         }
     }
-
+    handleReset = () => {
+        this.setState({items: []})
+    }
 
 
     render () {
@@ -35,7 +42,9 @@ export class TodoList extends React.Component {
 
                 <div>
                     <ul>
-                        {items.map((items, i) => (
+                        {
+                        items.map(
+                            (items, i) => (
                             <li key={i}> {items} </li>
                         ))}
                     </ul>
@@ -45,6 +54,7 @@ export class TodoList extends React.Component {
                         />
 
                     <button onClick={this.handleItems}> Add </button>
+                    <button onClick={this.handleReset}> Reset </button>
                 </div>
 
 
