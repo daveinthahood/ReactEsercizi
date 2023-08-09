@@ -43,18 +43,15 @@ export class TodoList extends React.Component {
 
     render () {
         const {items, newValue} = this.state
+        const {render} = this.props
+
         return (
             <>
                 <h1> To Do</h1>
 
                 <div>
-                    <ul>
-                        {
-                        items.map(
-                            (items, i) => (
-                            <li key={i}> {items} </li>
-                        ))}
-                    </ul>
+                    {render(items, this.handleDelete)}
+
                     <input type="text" 
                            value={newValue}
                            onChange={this.handleInput} 
