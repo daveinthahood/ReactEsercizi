@@ -5,6 +5,6 @@ import GithubUser from './GitHubUsers'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
  
-    <GithubUser />
+    <GithubUsers />
   
 )
