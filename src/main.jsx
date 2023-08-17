@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import  { CarDet }  from './useRef'
+import { LanguageContext } from './LanguageContext'
+
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <CarDet />
+  <LanguageContext />
 )
