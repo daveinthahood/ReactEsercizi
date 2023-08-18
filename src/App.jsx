@@ -2,6 +2,7 @@ import { Link, Route, Router, Routes } from "react-router-dom"
 import { Counter } from "./Counter"
 import { GitHubUsers } from "./GitHubUser"
 import { NotFound } from "./NotFound"
+import { GitHubList } from "./List"
 
 export const App = () => {
     return(
@@ -22,8 +23,9 @@ export const App = () => {
 
        <Routes>
           <Route path="/counter" element={<Counter/>}/>
-          <Route path="users/:username" element={<GitHubUsers/>} />
-          <Router element={<NotFound />}/>
+          <Route path="/users/" element={<GitHubUsers/>} />
+          <Route element={<NotFound />}/>
+          <Route path="/users/:username" element={<GitHubList/>} />  
          </Routes>
        </Router>
     )
