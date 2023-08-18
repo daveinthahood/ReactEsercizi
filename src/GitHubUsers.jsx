@@ -10,7 +10,7 @@ export const GithubUser = () => {
     if (!data) {
       try {
         const response = await fetch(
-          `https://api.github.com/users/${username}`
+          `https://api.github.com/users}`
         );
         if (response.ok) {
           const res = await response.json();
