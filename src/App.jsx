@@ -24,7 +24,7 @@ export const App = () => {
        <Routes>
           <Route path="/counter" element={<Counter/>}/>
           <Route path="/users/" element={<GitHubUsers/>} />
-          <Route element={<NotFound />}/>
+        
           <Route path="/users/:username" element={<GitHubList/>} />  
          </Routes>
        </Router>
