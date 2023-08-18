@@ -2,15 +2,14 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 export const GitHubUsers = () => {
-    const [data, setData] = useState([])
-    const {username} = useParams()
-   
+    const [data, setData] = useState(null)
 
+   
 
     useEffect(() => {
         const fetchGitHub = async() =>{
             try {
-                const result = await fetch ("https://api.github.com/users/${username}")
+                const result = await fetch ("https://api.github.com/users")
                 const res = await result.json()
                 setData(res)
             } catch (error) {
@@ -22,8 +21,10 @@ export const GitHubUsers = () => {
 
     return (
         <>
-           <p> User : {data && data.name} </p>
-           <p> Id : {data.id}</p>
+        
+            <h1> { data && data.name}</h1>
+           <p> User : { data && data.login} </p>
+           <p> Id : {data && data.id}</p>
         </>
     )
 }
